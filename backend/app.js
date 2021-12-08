@@ -83,6 +83,6 @@ async function main() {
     console.log(" mongo connected") 
   })
   .catch(err => {
-    console,log( err)    
+    console.log( err)    
   })
 }  
