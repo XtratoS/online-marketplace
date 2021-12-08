@@ -14,7 +14,7 @@ const dotenv = require("dotenv");
     })
 // connect to mongoose
 mongoose
-  .connect('mongodb://localhost:27017/onlineShopping')
+  .connect(process.env.mongoURL)
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
