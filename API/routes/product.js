@@ -3,7 +3,7 @@ const Product = require("../models/Product");
 const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin,isSeller} = require('./verifyToken');
 
 // CREATE
-router.post('/', verifyTokenAndAdmin | isSeller, async (req, res)=>{
+router.post('/', verifyTokenAndAdmin || isSeller, async (req, res)=>{
     const newProduct = new Product(req.body)
     try{
         const savedProduct = await newProduct.save();
@@ -15,7 +15,7 @@ router.post('/', verifyTokenAndAdmin | isSeller, async (req, res)=>{
     }
 })
 // update
-router.put('/:id', verifyTokenAndAdmin | (isSeller && req.user.id == req.params.seller), async (req, res) =>{
+router.put('/:id', verifyTokenAndAdmin, async (req, res) =>{
       try {
         const updatedProduct = await Product.findByIdAndUpdate(
           req.params.id,
@@ -30,7 +30,7 @@ router.put('/:id', verifyTokenAndAdmin | (isSeller && req.user.id == req.params.
       }
     });
 // DELETE
-router.delete('/find/:id',verifyTokenAndAdmin | isSeller , async(req, res) => {
+router.delete('/find/:id',verifyTokenAndAdmin || isSeller , async(req, res) => {
     try
     {
         await Product.findByIdAndDelete(req.params.id);
