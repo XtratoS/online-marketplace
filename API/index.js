@@ -8,14 +8,14 @@ const productRoute = require('./routes/product');
 const cartRoute = require('./routes/cart');
 const orderRoute = require('./routes/order');
 const cors = require('cors');
-const dotenv = require("dotenv");
+require('dotenv').config();
 // server starts
-    app.listen(5000, () => {
-        console.log ("Backend Server Is Running");
-    })
+app.listen(5000, () => {
+  console.log ("Backend Server Is Running");
+});
 // connect to mongoose
 mongoose
-  .connect('mongodb://localhost:27017/onlineShopping')
+  .connect(process.env.mongoURL)
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
@@ -26,4 +26,4 @@ app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
 app.use('/api/carts', cartRoute);
-app.use('/api/orders',orderRoute );
+app.use('/api/orders', orderRoute);
