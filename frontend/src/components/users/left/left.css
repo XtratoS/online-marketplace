@@ -1,0 +1,68 @@
+
+.left {
+    height: 100%;
+    background: #ebebeb;
+    box-shadow: 5px 0px 6px #dbdbdb, -5px 0px 6px #dbdbdb;
+    width: 100%;
+    z-index: -1;
+    /*margin-left: 10px;*/
+  }
+  
+  .left-menu {
+    padding: 16px 0px 0px 16px;
+    height: 47%;
+   
+  }
+  .vendor
+  {
+    padding: 16px 0px 0px 16px;
+
+  }
+  
+  /*.left-dialer {
+    padding: 16px;
+    background-color: white;
+    height: 47%;
+    position: relative;
+  }*/
+  
+  .menu-items {
+    margin-top: 16px;
+  }
+  
+  .menu-label {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .menu-item {
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    width: 95%;
+  }
+  .item-label {
+    font-size: 16px;
+    font-weight: 300;
+    
+    
+  }
+  .item-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    font-weight: 300;
+    color: #616161;
+    
+  }
+  .icon3
+{
+display:flex;
+flex:1;
+width:18px;
+height: 18px;
+}
+  
+  .item-active {
+    background-color: #f3efea;
+  }
