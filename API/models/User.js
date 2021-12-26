@@ -11,9 +11,12 @@ const UserSchema = new mongoose.Schema(
     },
     isSeller: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     img: { type: String },
+    cash:{type: Number,
+    default: 100,
+  }
   },
   { timestamps: true }
 );

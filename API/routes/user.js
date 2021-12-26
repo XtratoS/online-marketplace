@@ -83,5 +83,11 @@ router.get("/", verifyTokenAndAdmin, async (req, res) => {
       res.status(500).json(err);
     }
   });
-
+router.put('/profile', verifyToken, async(req,res) =>{
+  const user = await User.findById(req.user._id); 
+  if(user){
+    const {password, ...others } = user._doc;
+        res.status(200).json(others);
+  }
+})
 module.exports = router;

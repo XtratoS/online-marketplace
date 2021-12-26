@@ -56,5 +56,7 @@ router.post('/login', async(req, res) =>{
         res.status(500).json(e);
     }
     });
-
+router.get('/logout', async(req, res) =>{
+    res.cookie('jwt', '');
+});
 module.exports = router;

@@ -34,5 +34,12 @@ const verifyToken = (req, res,next) => {
         }
       })
   }
+  const isSeller = (req, res, next) => {
+  if (req.user && req.user.isSeller) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Seller Token' });
+  }
+};
   
-module.exports = {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin};
+module.exports = {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin, isSeller};
