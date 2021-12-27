@@ -1,0 +1,71 @@
+{
+    "NotSoldProducts": [
+    {
+      "id": 1,
+      "name": "Mobile", 
+      "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+      "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+      "price":"90",
+      "amount":"2"
+    },
+    {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      },
+      {
+          "id": 1,
+            "name": "Mobile", 
+            "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+            "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+            "price":"90",
+            "amount":"2"
+    },
+          
+    {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      },
+      {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      },
+      {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      },
+      {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      },
+      {
+        "id": 1,
+        "name": "Mobile", 
+        "desc":"Samsung Galaxy Note 20 Ultra – 6.9” – 12GB – 256GB – 4G",
+        "imag":"https://th.bing.com/th/id/OIP.1rtw1Tf-nFcpEtE-9Gjm5wHaHa?pid=ImgDet&rs=1",
+        "price":"90",
+        "amount":"2"
+      }
+      
+  
+  ]
+}
