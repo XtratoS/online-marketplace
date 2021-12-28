@@ -46,8 +46,7 @@ function  Add  ()
 
       
 <button className="btn1">Add</button >
-<button className="btn2">edit</button >
-
+ 
 </form>
 </section>
 </div>
@@ -55,6 +54,8 @@ function  Add  ()
 }
 export default Add
 /*
+<button className="btn2">edit</button >
+
   <select>
 <option value="admin">admin</option>
 <option value="cody">codv</option>

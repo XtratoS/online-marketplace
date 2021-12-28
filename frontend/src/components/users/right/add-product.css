@@ -6,9 +6,8 @@
 
 }*/
 
-
 .create-post{
-    width : 300px;
+    width : 100%;
     height: fit-content;
     display: flex;
   
@@ -36,23 +35,27 @@ width :98%;
 }
 
 .btn1 {
-    background: #f04b6f;
+    background:teal;
     border-radius: 2px;
-    width: 100%;
+    width: 20%;
     height: 30px;
     border:1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 .btn2
  {
     
     border-radius: 2px;
-    width: 100%;
+    width: 20%;
     height: 30px;
     border:1px solid;
     margin-top: 20px;
     border-color:darkgray;
+    align-items: center;
 }
 
 /*.a{
