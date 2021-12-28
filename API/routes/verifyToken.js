@@ -40,6 +40,16 @@ const verifyToken = (req, res,next) => {
   } else {
     res.status(401).send({ message: 'Invalid Seller Token' });
   }
-};
+  };
   
-module.exports = {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin, isSeller};
+  // seller authorization 
+  const verifySellerAuthorization = (req, res, next) =>{
+    verifyToken(req, res,()=>{
+      if (req.user.id === req.params.seller) {
+        next();
+      } else {
+        res.status(403).json("You are not alowed to do that!");
+      }
+    })
+}
+module.exports = {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin, isSeller,verifySellerAuthorization };

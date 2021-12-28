@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Product = require("../models/Product");
-const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin,isSeller} = require('./verifyToken');
+const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin,isSeller,verifySellerAuthorization} = require('./verifyToken');
 
 // CREATE
 router.post('/', verifyTokenAndAdmin || isSeller, async (req, res)=>{
@@ -15,7 +15,7 @@ router.post('/', verifyTokenAndAdmin || isSeller, async (req, res)=>{
     }
 })
 // update
-router.put('/:id', verifyTokenAndAdmin, async (req, res) =>{
+router.put('/:id', verifyTokenAndAdmin || verifySellerAuthorization, async (req, res) =>{
       try {
         const updatedProduct = await Product.findByIdAndUpdate(
           req.params.id,
@@ -30,7 +30,7 @@ router.put('/:id', verifyTokenAndAdmin, async (req, res) =>{
       }
     });
 // DELETE
-router.delete('/find/:id',verifyTokenAndAdmin || isSeller , async(req, res) => {
+router.delete('/find/:id',verifyTokenAndAdmin || (isSeller && verifySellerAuthorization) , async(req, res) => {
     try
     {
         await Product.findByIdAndDelete(req.params.id);
