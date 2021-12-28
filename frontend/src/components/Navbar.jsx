@@ -109,12 +109,9 @@ const Navbar = () => {
         </Link> 
         </div>) : ( <div>
           <Link to ={"/login"}>
-
-          <MenuItem>SignOut</MenuItem> 
+          <MenuItem onClick={handleClick } >SignOut</MenuItem> 
           </Link>
-           <Button onClick={handleClick }>
-           SignOut
-          </Button>
+          
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
         </div>) }
         
