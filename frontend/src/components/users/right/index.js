@@ -59,7 +59,7 @@ import { useState, useEffect } from "react";
         ))}
          {isloading && <div> loading ... </div>}
          {!products && !isloading && !errMsg && (
-        <div className="not-found"> No Posts</div>
+        <div className="not-found"> No Products</div>
       )}{/*no posts no loading*/}
       
       {errMsg && <div className="error"> {errMsg}</div>}
