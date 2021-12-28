@@ -6,10 +6,16 @@ import React from "react";
 //import "./profile.css";
 import "./add-product.css";
 import Header from '../../common/Header';
+import Navbar from "../../Navbar";
+import  Announcement  from "../../Announcement";
 
 
 function  Add  () 
 { return(
+  <div> 
+    <Announcement/>
+    <Navbar/>
+    
 
  <section className="create-post">
 <h2>Add New Product</h2>
@@ -32,7 +38,7 @@ function  Add  ()
 
 </form>
 </section>
-
+</div>
 )
 }
 export default Add
