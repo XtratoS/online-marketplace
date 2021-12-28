@@ -19,10 +19,10 @@ export default function ActionAreaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-           {user.username}
+           {user.user.username}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          <div> Current cash balance: <span>  {user.cash}</span><span> LE</span></div>
+          <div> Current cash balance: <span>  {user.user.cash}</span><span> LE</span></div>
         
           </Typography>
         </CardContent>
