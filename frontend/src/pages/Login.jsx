@@ -103,7 +103,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button onClick={handleClick } disabled={isFetching}>
-            LOGIN
+            LOGIN 
           </Button>
           {logged? <Redirect to = "/" /> :  ""  }
           <Link to="/register">

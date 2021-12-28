@@ -20,7 +20,7 @@ export const register = async (dispatch, user) => {
   }
 };
 export const logout = async (dispatch) => {
-  dispatch(registerStart());
+  //dispatch(registerStart());
   try {
     //const res = await publicRequest.get("/auth/logout", user);
     dispatch(logoutsuccess());
