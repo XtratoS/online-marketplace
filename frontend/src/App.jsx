@@ -53,6 +53,7 @@ const App = () => {
           <Redirect to="/" />
         </Route>
         <Route path="/search"> <SearchPage/> </Route>
+        <Route path="/sucess"> <Success/> </Route>
       </Switch>
     </Router>
   );
