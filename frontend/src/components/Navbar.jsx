@@ -3,8 +3,9 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../redux/apiCalls";
 const Container = styled.div`
   height: 60px;
   ${mobile({ height: "50px" })}
@@ -60,10 +61,27 @@ const MenuItem = styled.div`
   margin-left: 25px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
-
+const Button = styled.button`
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+  &:disabled {
+    color: green;
+    cursor: not-allowed;
+  }
+`;
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity)
   const user = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
+  const handleClick = (e) => {
+    e.preventDefault();
+    logout(dispatch);
+  };
       return (
 <Container>
   <Wrapper>
@@ -91,9 +109,12 @@ const Navbar = () => {
         </Link> 
         </div>) : ( <div>
           <Link to ={"/login"}>
+
           <MenuItem>SignOut</MenuItem> 
           </Link>
-          
+           <Button onClick={handleClick }>
+           SignOut
+          </Button>
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
         </div>) }
         

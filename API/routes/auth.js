@@ -41,6 +41,7 @@ router.post('/login', async(req, res) =>{
                 "alaa" , {expiresIn: "3d"});
                 res.status(200).json({user, accessToken});
                // res.cookie('nToken', accessToken, { maxAge: 900000, httpOnly: true });
+               
             }
             else
             {
@@ -57,7 +58,7 @@ router.post('/login', async(req, res) =>{
         res.status(500).json(e);
     }
     });
-router.get('/signout', async(req, res) =>{
+router.get('/logout', async(req, res) =>{
     res.clearCookie(accessToken);
 });
 module.exports = router;
