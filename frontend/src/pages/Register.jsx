@@ -97,11 +97,11 @@ const Register = () =>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Link to = {"/login"}>
+     
           <Button onClick={handleClickReg} disabled={isFetching}>
             CREATE
             </Button>
-            </Link>
+        
           
         </Form>
       </Wrapper>
