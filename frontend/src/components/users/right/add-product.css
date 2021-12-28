@@ -35,7 +35,7 @@ width :98%;
 }
 
 .btn1 {
-    background: #1a798a;
+    background:teal;
     border-radius: 2px;
     width: 20%;
     height: 30px;
@@ -43,6 +43,8 @@ width :98%;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     align-items: center;
+    justify-content: center;
+    color: white;
 }
 .btn2
  {
