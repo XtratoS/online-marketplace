@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { login } from "../redux/apiCalls";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -63,11 +63,11 @@ const Button = styled.button`
   text-decoration: underline;
   cursor: pointer;
 `;*/
-
+ 
 const Error = styled.span`
   color: red;
 `;
-
+let logged = false;
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,7 +76,17 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    login(dispatch, { email, password });
+    try
+    {
+      login(dispatch, { email, password });
+      logged = true;
+    }
+    catch(err)
+    {
+      console.log(err)
+    }
+
+    
   };
   return (
     <Container>
@@ -92,9 +102,10 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleClick} disabled={isFetching}>
+          <Button onClick={handleClick } disabled={isFetching}>
             LOGIN
           </Button>
+          {logged? <Redirect to = "/" /> :  ""  }
           <Link to="/register">
           CREATE A NEW ACCOUNT
           </Link>
