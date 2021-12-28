@@ -50,7 +50,7 @@ const App = () => {
         <Route path="./notsold"> <NotSold/> </Route>
         <Route path="/add"> <Add/> </Route>
         <Route path="/signout">
-          <Redirect to="/" />
+          <Redirect to="/login" />
         </Route>
         <Route path="/search"> <SearchPage/> </Route>
         <Route path="/sucess"> <Success/> </Route>

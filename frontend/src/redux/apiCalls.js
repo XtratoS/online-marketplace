@@ -1,13 +1,11 @@
-import { loginFailure, loginStart, loginSuccess } from "./userRedux";
+import { loginFailure, loginStart, loginSuccess,registerFailure,registerSuccess } from "./userRedux";
 import { publicRequest } from "../requestMethods";
-import {Redirect} from "react-router-dom";
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
-    <Redirect to="/" />
-  } catch (err) {
+      } catch (err) {
     dispatch(loginFailure());
   }
 };
@@ -16,8 +14,8 @@ export const register = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/register", user);
-    dispatch(loginSuccess(res.data));
+    dispatch(registerSuccess(res.data));
   } catch (err) {
-    dispatch(loginFailure());
+    dispatch(registerFailure());
   }
 };
