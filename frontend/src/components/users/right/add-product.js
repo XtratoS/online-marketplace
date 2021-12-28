@@ -8,10 +8,22 @@ import "./add-product.css";
 import Header from '../../common/Header';
 import Navbar from "../../Navbar";
 import  Announcement  from "../../Announcement";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 function  Add  () 
-{ return(
+{ 
+  const [name, setName] = useState("");
+  const [imageURL, setImageURL] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
+  const dispatch = useDispatch();
+  //const { isFetching, error } = useSelector((state) => state.user);
+
+
+  
+  return(
   <div> 
     <Announcement/>
     <Navbar/>
@@ -21,16 +33,16 @@ function  Add  ()
 <h2>Add New Product</h2>
  <form>
       <label>Name:</label> 
-      <input type="text" required />
+      <input type="text" onChange={(e) => setName(e.target.value)} required />
 
        <label> Image URL: </label>
-        <input type="url" required /> 
+        <input type="url"  onChange={(e) => setImageURL(e.target.value)} required /> 
         <label>description :</label> 
-        <input required></input> 
+        <input onChange={(e) => setDescription(e.target.value)} required></input> 
         <label>Price: </label> 
-        <input type="number" required />
+        <input type="number"  onChange={(e) => setPrice(e.target.value)}required />
         <label>Amount: </label> 
-        <input type="number" required />
+        <input type="number" onChange={(e) => setAmount(e.target.value)}required />
 
       
 <button className="btn1">Add</button >
