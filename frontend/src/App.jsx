@@ -40,7 +40,7 @@ const App = () => {
         <Route path="/success">
           <Success />
         </Route>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/login"> <Login /></Route>
         <Route path="/register">
           <Register />
         </Route>

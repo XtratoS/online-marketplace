@@ -90,7 +90,10 @@ const Navbar = () => {
         <MenuItem>SIGN IN</MenuItem>
         </Link> 
         </div>) : ( <div>
+          <Link to ={"/login"}>
           <MenuItem>SignOut</MenuItem> 
+          </Link>
+          
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
         </div>) }
         

@@ -35,11 +35,12 @@ router.post('/login', async(req, res) =>{
                 
                 const accessToken = jwt.sign({
                     id: user._id,
-                    isAdmin: user.isAdmin
-
+                    isAdmin: user.isAdmin,
+                    isSeller: user.isSeller
                 },
                 "alaa" , {expiresIn: "3d"});
                 res.status(200).json({user, accessToken});
+               // res.cookie('nToken', accessToken, { maxAge: 900000, httpOnly: true });
             }
             else
             {
@@ -57,6 +58,6 @@ router.post('/login', async(req, res) =>{
     }
     });
 router.get('/logout', async(req, res) =>{
-    res.cookie('jwt', '');
+    res.clearCookie(accessToken);
 });
 module.exports = router;
