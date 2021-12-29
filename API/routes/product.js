@@ -3,8 +3,9 @@ const Product = require("../models/Product");
 const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin,isSeller,verifySellerAuthorization} = require('./verifyToken');
 
 // CREATE
-router.post('/', verifyTokenAndAdmin || isSeller, async (req, res)=>{
-    const newProduct = new Product(req.body)
+router.post('/', async (req, res)=>{
+    const newProduct = new Product(req.body) 
+    console.log(req.body)
     try{
         const savedProduct = await newProduct.save();
         res.status(200).json(savedProduct);

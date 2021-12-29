@@ -16,9 +16,11 @@ const UserSchema = new mongoose.Schema(
     img: { type: String },
     cash:{type: Number,
     default: 100,
-  }
+  },
+  product: { type: mongoose.Schema.Types.ObjectID, ref: 'Product' }
   },
   { timestamps: true }
+ 
 );
 
 module.exports = mongoose.model("User", UserSchema);
