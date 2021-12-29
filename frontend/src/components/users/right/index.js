@@ -11,7 +11,16 @@ import { useState, useEffect } from "react";
 //import { NotSoldProducts} from "../../../data/profile"
 //import {profileProducts} from "../../../data/profile"
 //import { Link } from '@mui/material';
+import styled from "styled-components";
+const Button = styled.button`
 
+border: none;
+padding: 15px 20px;
+background-color: teal;
+color: white;
+cursor: pointer;
+margin-right:20px;
+`;
    
     
     const Right  = () => {
@@ -38,15 +47,9 @@ import { useState, useEffect } from "react";
           
           <div className='right-options'>
             <div></div>
-            <Link to="/add">
-          <button className="add-button">
-              <div className="add-icon">
-              <img src="https://img.icons8.com/ios-glyphs/25/ffffff/add--v1.png"/>
-              
-              </div>
-              <label className="add-label">Add a Product</label>
-              </button>
-              </Link>
+            <Link to= "/add">
+        <Button>Add a Product</Button>
+        </Link> 
           </div>
        
     
