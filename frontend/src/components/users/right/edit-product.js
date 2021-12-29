@@ -40,8 +40,8 @@ function Edit ({item})
     <Announcement/>
     <Navbar/>
     
-
- <section className="create-post">
+<div className="create">
+ <section className="create_product">
 <h2>Edit your Product</h2>
  <form>
       <label>Name:</label> 
@@ -57,10 +57,11 @@ function Edit ({item})
         <label>Please Enter Your Email to Confirm:</label> 
         <input type="text" onChange={(e) => setSeller(e.target.value)} required /> 
       
-<button className="btn1" onClick={handleClick}>Edit!</button >
  
 </form>
+<button className="button" onClick={handleClick}>Edit !</button >
 </section>
+</div>
 </div>
 )
 }
