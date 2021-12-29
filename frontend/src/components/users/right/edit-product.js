@@ -4,15 +4,16 @@ import React from "react";
 //import LeftFold from './left-fold/index';
 //import RightFold from "./right-fold/index";
 //import "./profile.css";
-import "./add-product.css";
+import "./edit-product.css";
 import Header from '../../common/Header';
 import Navbar from "../../Navbar";
 import  Announcement  from "../../Announcement";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import {addProduct} from "../../../redux/apiCalls";
+import {updateProduct} from "../../../redux/apiCalls";
 
-function  Edit  ()
+
+function Edit ()
 { 
   const user = useSelector((state) => state.user.currentUser);
   //const { isFetching, error } = useSelector((state) => state.user);
@@ -59,7 +60,7 @@ function  Edit  ()
 </div>
 )
 }
-export default edit
+export default Edit 
 /*
 <button className="btn2">edit</button >
 

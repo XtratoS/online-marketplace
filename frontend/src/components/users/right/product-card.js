@@ -30,7 +30,7 @@ const Product = ({ product, handleDelete }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Link to="/add">
+          <Link to="/edit">
             <Button size="small">edit</Button>
           </Link>
           <Button size="small" onClick={() => handleDelete(product.id)}>remove</Button>

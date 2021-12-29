@@ -18,6 +18,7 @@ import {
 } from "react-router-dom";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
+import Edit from "./components/users/right/edit-product" 
 //import { Search } from "@material-ui/icons";
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="./sold"> <Sold/> </Route>
         <Route path="./notsold"> <NotSold/> </Route>
         <Route path="/add"> <Add/> </Route>
+        <Route path="/edit"> <Edit/> </Route>
         <Route path="/signout">
           <Redirect to="/login" />
         </Route>
