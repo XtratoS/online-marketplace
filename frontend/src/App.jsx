@@ -54,7 +54,7 @@ const App = () => {
         <Route path="/signout">
           <Redirect to="/login" />
         </Route>
-        <Route path="/search"> <SearchPage/> </Route>
+        <Route path="/search/:search"> <SearchPage/> </Route>
       </Switch>
     </Router>
   );
