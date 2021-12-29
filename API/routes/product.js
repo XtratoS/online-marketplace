@@ -58,7 +58,7 @@ router.get('/find/:id', async(req, res) => {
 /*router.get("/sold", async (req, res) => {
   try{
     const products = await Product.find({
-      instock: 
+      instock: 0
       });
     res.status(200).json(products);
   }
@@ -90,7 +90,27 @@ router.get("/", async (req, res) => {
       res.status(500).json(err);
     }
   });
-
+// get search products 
+router.get("/:search", async (req, res) => {
+  try {
+    const search = req.params.search;
+      let products;
+    products = await Product.find({
+      title: {
+        $in: [search],
+      } 
+      
+  });
+  if (products)
+      {
+        res.status(200).json(products);
+      }
+      else{res.status(204).json("Sorry! No Match");}
+  }
+   catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 
