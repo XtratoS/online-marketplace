@@ -9,6 +9,20 @@ import Typography from '@mui/material/Typography';
 import "./product-card.css";
 import {Link} from "react-router-dom";
 import Edit from './edit-product';
+import styled from "styled-components";
+
+const TopButton = styled.button`
+margin-right:5px;
+margin_left:5px; 
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border:none;
+ {(props) => props.type === "filled" && "none"};
+ background-color: ${(props) =>
+   props.type === "filled" ? "black" : "transparent"};
+ color: ${(props) => props.type === "filled" && "white"};
+`;
 
 
 const Product = ({ product, handleDelete }) => {
@@ -19,7 +33,7 @@ const Product = ({ product, handleDelete }) => {
           component="img"
 
           height="200"
-          image={product.imag} />
+          image={product.img} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {product.name}
@@ -32,9 +46,10 @@ const Product = ({ product, handleDelete }) => {
         </CardContent>
         <CardActions>
           <Link to={`/edit/${product._id}`}>
-            <Button size="small">edit</Button>
+          
+          <TopButton>edit</TopButton>
           </Link>
-          <Button size="small" onClick={() => handleDelete(product.id)}>remove</Button>
+          <TopButton  onClick={() => handleDelete(product.id)}>remove</TopButton>
         </CardActions>
       </Card>
     </div>
