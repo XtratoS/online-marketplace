@@ -3,6 +3,7 @@ import styled from "styled-components";
 //import { popularProducts } from "../data";
 import Product from "./Product";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
   padding: 20px;
@@ -14,7 +15,8 @@ const Container = styled.div`
 const ProductSearch = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  const location = useLocation();
+  const word = location.pathname.split("/")[2];
   useEffect(() => {
     const getProducts = async () => {
       try {
