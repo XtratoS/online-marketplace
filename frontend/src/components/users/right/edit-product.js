@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {addProduct} from "../../../redux/apiCalls";
 
-function  Add  ()
+function  Edit  ()
 { 
   const user = useSelector((state) => state.user.currentUser);
   //const { isFetching, error } = useSelector((state) => state.user);
@@ -52,14 +52,14 @@ function  Add  ()
         <label>Please Enter Your Email to Confirm:</label> 
         <input type="text" onChange={(e) => setSeller(e.target.value)} required /> 
       
-<button className="btn1" onClick={handleClick}>Add</button >
+<button className="btn1" onClick={handleClick}>Edit !</button >
  
 </form>
 </section>
 </div>
 )
 }
-export default Add
+export default edit
 /*
 <button className="btn2">edit</button >
 
