@@ -10,7 +10,8 @@ import "./product-card.css";
 import {Link} from "react-router-dom";
 import Edit from './edit-product';
 import styled from "styled-components";
-
+import {deleteProduct} from "../../../redux/apiCalls";
+import { useDispatch, useSelector } from "react-redux";
 const TopButton = styled.button`
 margin-right:5px;
 margin_left:5px; 
@@ -26,6 +27,15 @@ margin_left:5px;
 
 
 const Product = ({ product, handleDelete }) => {
+const id = product._id;
+console.log(id);
+  const dispatch = useDispatch();
+  const handleClick =  (e)=> {
+    e.preventDefault();
+
+    deleteProduct( id ,dispatch);
+    
+  };
   return (
     <div className='product-card'>
       <Card sx={{ maxWidth: 200 }}>
@@ -49,7 +59,7 @@ const Product = ({ product, handleDelete }) => {
           
           <TopButton>edit</TopButton>
           </Link>
-          <TopButton  onClick={() => handleDelete(product.id)}>remove</TopButton>
+          <TopButton  onClick={handleClick}>remove</TopButton>
         </CardActions>
       </Card>
     </div>

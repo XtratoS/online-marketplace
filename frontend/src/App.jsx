@@ -18,7 +18,7 @@ import {
 } from "react-router-dom";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
-import Edit from "./components/users/right/edit-product" 
+import Edit from "./components/users/right/edit-product"; 
 //import { Search } from "@material-ui/icons";
 
 const App = () => {

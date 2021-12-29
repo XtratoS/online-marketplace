@@ -15,16 +15,16 @@ import Product from "./product-card";
 import {useLocation} from "react-router-dom";
 
 
-function Edit ({item})
+function Edit ()
 { 
   const user = useSelector((state) => state.user.currentUser);
   //const { isFetching, error } = useSelector((state) => state.user);
   const [seller, setSeller] = useState();
-  const [title, setTitle] = useState("");
-  const [img, setImageURL] = useState("");
-  const [desc, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [amount, setAmount] = useState("");
+  const [title, setTitle] = useState();
+  const [img, setImageURL] = useState();
+  const [desc, setDescription] = useState();
+  const [price, setPrice] = useState();
+  const [amount, setAmount] = useState();
   const dispatch = useDispatch();
   const location = useLocation();
   const productId = location.pathname.split("/")[2];
@@ -32,6 +32,7 @@ function Edit ({item})
 
   const handleClick =  (e)=> {
     e.preventDefault();
+
     updateProduct( productId ,{seller,title,desc,img,price,amount},dispatch);
   };
   
@@ -56,10 +57,9 @@ function Edit ({item})
         <input type="number" onChange={(e) => setAmount(e.target.value)} />
         <label>Please Enter Your Email to Confirm:</label> 
         <input type="text" onChange={(e) => setSeller(e.target.value)} required /> 
-      
- 
+        <button className="button" onClick={handleClick}>Edit !</button > 
 </form>
-<button className="button" onClick={handleClick}>Edit !</button >
+
 </section>
 </div>
 </div>
