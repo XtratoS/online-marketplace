@@ -55,7 +55,6 @@ const App = () => {
           <Redirect to="/login" />
         </Route>
         <Route path="/search"> <SearchPage/> </Route>
-        <Route path="/sucess"> <Success/> </Route>
       </Switch>
     </Router>
   );

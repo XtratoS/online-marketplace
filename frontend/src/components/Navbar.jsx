@@ -75,6 +75,7 @@ const Button = styled.button`
   }
 `;
 const Navbar = () => {
+  const [search, setSearch] = useState("");
   const quantity = useSelector(state=>state.cart.quantity)
   const user = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
@@ -82,13 +83,16 @@ const Navbar = () => {
     e.preventDefault();
     logout(dispatch);
   };
+  const handleSearch = (e) =>{
+
+  }
       return (
 <Container>
   <Wrapper>
     <Left>
       <SearchContainer>
-        <Input placeholder="Search" />
-        <Link Link to={"/search"}>
+        <Input placeholder="Search" onClick={handleSearch } onChange={(e) => setSearch(e.target.value)} />
+        <Link Link to={`/search/${search}`}>
         <Search style={{ color: "gray", fontSize: 16 }} />
         </Link>
       
