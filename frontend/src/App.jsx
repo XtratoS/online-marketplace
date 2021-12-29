@@ -50,7 +50,7 @@ const App = () => {
         <Route path="./sold"> <Sold/> </Route>
         <Route path="./notsold"> <NotSold/> </Route>
         <Route path="/add"> <Add/> </Route>
-        <Route path="/edit"> <Edit/> </Route>
+        <Route path="/edit/:id"> <Edit/> </Route>
         <Route path="/signout">
           <Redirect to="/login" />
         </Route>

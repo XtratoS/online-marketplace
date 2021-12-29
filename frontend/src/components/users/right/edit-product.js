@@ -11,9 +11,11 @@ import  Announcement  from "../../Announcement";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {updateProduct} from "../../../redux/apiCalls";
+import Product from "./product-card";
+import {useLocation} from "react-router-dom";
 
 
-function Edit ()
+function Edit ({item})
 { 
   const user = useSelector((state) => state.user.currentUser);
   //const { isFetching, error } = useSelector((state) => state.user);
@@ -24,11 +26,13 @@ function Edit ()
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
   const dispatch = useDispatch();
+  const location = useLocation();
+  const productId = location.pathname.split("/")[2];
   //const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick =  (e)=> {
     e.preventDefault();
-    updateProduct({seller,title,desc,img,price,amount},dispatch);
+    updateProduct( productId ,{seller,title,desc,img,price,amount},dispatch);
   };
   
   return(
@@ -53,7 +57,7 @@ function Edit ()
         <label>Please Enter Your Email to Confirm:</label> 
         <input type="text" onChange={(e) => setSeller(e.target.value)} required /> 
       
-<button className="btn1" onClick={handleClick}>Edit !</button >
+<button className="btn1" onClick={handleClick}>Edit!</button >
  
 </form>
 </section>

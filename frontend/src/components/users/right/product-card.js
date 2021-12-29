@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "./product-card.css";
 import {Link} from "react-router-dom";
+import Edit from './edit-product';
 
 
 const Product = ({ product, handleDelete }) => {
@@ -30,7 +31,7 @@ const Product = ({ product, handleDelete }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Link to="/edit">
+          <Link to={`/edit/${product._id}`}>
             <Button size="small">edit</Button>
           </Link>
           <Button size="small" onClick={() => handleDelete(product.id)}>remove</Button>

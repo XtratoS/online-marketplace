@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
     
     const Right  = () => {
       let { data:products, isloading, errMsg} = useFetch(
-     "http://localhost:4001/NotSoldProducts" //url from json-server
+        "http://localhost:5000/api/products" //url from json-server
         
       );
     
