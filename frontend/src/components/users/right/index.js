@@ -37,7 +37,7 @@ margin-right:20px;
     };
      // const products= NotSoldProducts;
       return (
-       <section >
+       <section className='A' >
           <div className='right-heading'>
           <label className='heading-label'>Your Store</label>
           </div>
