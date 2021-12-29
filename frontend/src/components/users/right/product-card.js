@@ -30,7 +30,7 @@ const Product = ({ product, handleDelete }) => {
           component="img"
 
           height="200"
-          image={product.imag} />
+          image={product.img} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {product.name}
