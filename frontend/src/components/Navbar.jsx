@@ -122,13 +122,12 @@ const Navbar = () => {
           <MenuItem>Home</MenuItem> 
           </Link>
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
+
           <Link to ={"/"}>
           <MenuItem onClick={handleClick } >SignOut</MenuItem> 
           </Link>
         </div>) }
         
-              
-          
           <Link to="/cart">
           <MenuItem>
             <Badge badgeContent={quantity} color="primary">
