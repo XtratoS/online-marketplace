@@ -1,18 +1,8 @@
 import * as React from 'react';
 import Product from '../components/users/right/product-card';
 import useFetch from '../useFetch';
-import styled from "styled-components";
 import { useSelector } from 'react-redux';
 import '../components/users/right//right.css';
-const Button = styled.button`
-
-border: none;
-padding: 15px 20px;
-background-color: teal;
-color: white;
-cursor: pointer;
-margin-right:20px;
-`;
    
 function Sold() {
     const user = useSelector((state) => state.user.currentUser.user);

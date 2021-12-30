@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import {useDispatch, useSelector } from "react-redux";
-import { Link, Redirect} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logout } from "../redux/apiCalls";
 import { useState } from "react";
 const Container = styled.div`
