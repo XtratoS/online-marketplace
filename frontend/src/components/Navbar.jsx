@@ -119,7 +119,7 @@ const Navbar = () => {
         </div>) : ( <div>
           
           <Link to ={"/"}>
-          <MenuItem onClick={handleClick } >Home</MenuItem> 
+          <MenuItem>Home</MenuItem> 
           </Link>
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
           <Link to ={"/"}>
