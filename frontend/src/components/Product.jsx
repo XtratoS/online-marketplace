@@ -72,11 +72,12 @@ const Icon = styled.div`
 const Product = ({ item }) => {
   const user = useSelector((state) => state.user.currentUser.user);
   const id = item._id;
+  const email = user.email;
   const dispatch = useDispatch();
   const handleShare =async (e)=>{
     e.preventDefault();
     try {
-      shareProduct(id, user, dispatch)
+      shareProduct(id, email, dispatch)
   }
   catch(err) {console.log(err)}
 };

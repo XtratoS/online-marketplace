@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Product = require("../models/Product");
+const User = require('../models/User');
 const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin,isSeller,verifySellerAuthorization} = require('./verifyToken');
 
 // CREATE
@@ -152,17 +153,46 @@ router.get("/view/:id", async (req, res) => {
   }
 });
 // share product 
-router.get("/share/:id", async (req, res) => {
+router.get("/share/:id/:email", async (req, res) => {
   try{
     const productAllow = await Product.findById(req.params.id);
-    productAllow.seller = req.body.email;
-    console.log("email: " +req.body.email)
-    productAllow.amount = 1;
-    console.log("before"+productAllow);
-    const newProduct = new Product(productAllow)
-    const savedProduct = await newProduct.save();
-    console.log("after" +savedProduct);
+    const seller = req.params.email;
+    const user = await User.findOne({email : seller });
+      console.log("user: "+user.username)
+      console.log("usercash: "+user.cash)
+      console.log("product price: "+productAllow.price)
+    if (user.cash >= productAllow.price )
+    {
+      console.log("email: " +req.params.email)
+      console.log("before"+productAllow);
+      const newProduct = new Product();
+      //const {seller, title,desc, img, price, amount };
+      const title = productAllow.title;
+      const desc = productAllow.desc;
+      const img = productAllow.img;
+      const price = productAllow.price;
+      const amount = 1;
+      newProduct.price =price;
+      newProduct.title =title;
+      newProduct.desc =desc;
+      newProduct.seller = seller;
+      newProduct.img = img;
+      newProduct.amount = amount;
+      const updatedSeller = await User.findOne({email : productAllow.seller});
+      updatedSeller.cash = updatedSeller.cash + price;
+      updatedSeller.save();
+      const updatedbuyer = await User.findOne({email : seller});
+      updatedbuyer.cash = updatedbuyer.cash - price;
+      updatedbuyer.save()
+      productAllow.amount = productAllow.amount - 1;
+      productAllow.save() 
+      const savedProduct = await newProduct.save();
+      console.log("after" +savedProduct);
+
     res.status(200).json(savedProduct);
+  }
+    else
+    res.status(403).json("your cash is not enough");
   }
   catch(e)
   {

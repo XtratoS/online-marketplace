@@ -71,9 +71,9 @@ export const addProduct = async (product, dispatch) => {
     dispatch(addProductFailure());
   }
 };
-export const shareProduct = async (id,user, dispatch) => {
+export const shareProduct = async (id,email, dispatch) => {
   try {
-    const res = await publicRequest.get(`products/share/${id}`, user);
+    const res = await publicRequest.get(`products/share/${id}/${email}`);
   } catch (err) {
     dispatch(addProductFailure());
   }

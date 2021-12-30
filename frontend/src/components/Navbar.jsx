@@ -122,7 +122,7 @@ const Navbar = () => {
           <MenuItem onClick={handleClick } >Home</MenuItem> 
           </Link>
           <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
-          <Link to ={"/login"}>
+          <Link to ={"/"}>
           <MenuItem onClick={handleClick } >SignOut</MenuItem> 
           </Link>
         </div>) }
