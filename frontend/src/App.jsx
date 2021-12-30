@@ -7,9 +7,11 @@ import Cart from "./pages/Cart";
 import Users from "./components/users/index";
 import Add from"./components/users/right/add-product";
 import SearchPage from "./pages/search";
-import Sold from "./components/sold/index";
-import NotSold from "./components/not-sold";
+import Sold from "./pages/soldProducts";
+import NotSold from "./pages/notSoldProducts";
 import Purchased from "./components/purchased";
+import Navbar from "./components/Navbar";
+import Announcement from "./components/Announcement";
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +21,6 @@ import {
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 import Edit from "./components/users/right/edit-product"; 
-//import { Search } from "@material-ui/icons";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -46,9 +47,21 @@ const App = () => {
           <Register />
         </Route>
         <Route path="/profile"> <Users/> </Route>
-        <Route path="./purchased"> <Purchased/> </Route>
-        <Route path="./sold"> <Sold/> </Route>
-        <Route path="./notsold"> <NotSold/> </Route>
+        <Route path="/purchased">
+        <Announcement />
+        <Navbar />
+        <Purchased/>
+        </Route>
+        <Route path="/sold"> 
+        <Announcement />
+        <Navbar />
+        <Sold/> 
+        </Route>
+        <Route path="/notsold">
+        <Announcement />
+        <Navbar />
+        <NotSold/> 
+        </Route>
         <Route path="/add"> <Add/> </Route>
         <Route path="/edit/:id"> <Edit/> </Route>
         <Route path="/signout">

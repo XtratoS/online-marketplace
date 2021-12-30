@@ -1,8 +1,4 @@
 import React from "react";
-//import Header from "../common/header";
-//import Sidebar from "../common/sidebar";
-//import LeftFold from './left-fold/index';
-//import RightFold from "./right-fold/index";
 import "./profile.css";
 import Announcement from "../Announcement";
 import Navbar from "../Navbar";

@@ -46,7 +46,7 @@ console.log(id);
           image={product.img} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {product.name}
+            {product.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {product.desc}
