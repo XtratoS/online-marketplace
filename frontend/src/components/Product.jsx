@@ -5,7 +5,6 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import {shareProduct} from "../../src/redux/apiCalls";
 const Info = styled.div`

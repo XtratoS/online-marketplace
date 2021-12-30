@@ -9,13 +9,7 @@
     
     height: 100%;
   }
-  
-/* .profile-sidebar {
-    display: flex;
-    flex: 1;
-    //height: 100vh;
-  }*/
-  
+ 
   .profile-left {
     display: flex;
     flex: 2;
@@ -25,11 +19,4 @@
     display: flex;
     flex: 11;
   }
-  /*.side
-  {
-    display :flex;
-    flex:0.1;
-    background-color:white;
-    width: 100%;
-  }
-  */
+  

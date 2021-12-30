@@ -1,19 +1,10 @@
-
-//import react from 'react';
-//import { ProductsMenu } from '../../../data/profile';
-//import MenuItem from "./menu-item";
 import "./left.css";
 import {Link} from "react-router-dom";
-
 import ImgMediaCard from './demo';
 import * as React from 'react';
-//import ReactDOM from 'react-dom';
-//import { StyledEngineProvider } from '@mui/material/styles';
 function Left() {
- // const menu= ProductsMenu;
   return (
     <div>
-    
     <Link to="/profile">
     <div className="vendor" >
    < ImgMediaCard/>
@@ -55,6 +46,3 @@ function Left() {
 }
 
 export default Left;
- /*<div className='left-products'>
-
-   </div>*/

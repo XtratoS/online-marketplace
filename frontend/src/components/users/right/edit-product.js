@@ -5,7 +5,6 @@ import  Announcement  from "../../Announcement";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {updateProduct} from "../../../redux/apiCalls";
-import Product from "./product-card";
 import {useLocation} from "react-router-dom";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -71,11 +70,3 @@ function Edit ()
 )
 }
 export default Edit 
-/*
-<button className="btn2">edit</button >
-
-  <select>
-<option value="admin">admin</option>
-<option value="cody">codv</option>
- </select> 
-V*/

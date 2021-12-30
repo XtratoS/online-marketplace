@@ -64,9 +64,6 @@ const App = () => {
         </Route>
         <Route path="/add"> <Add/> </Route>
         <Route path="/edit/:id"> <Edit/> </Route>
-        <Route path="/signout">
-          <Redirect to="/login" />
-        </Route>
         <Route path="/search/:search"> <SearchPage/> </Route>
       </Switch>
     </Router>
