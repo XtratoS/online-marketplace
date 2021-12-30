@@ -1,6 +1,5 @@
 import React from "react";
 import "./profile.css";
-//import Left from "./left";
 import Right from "./right";
 import Left from "../users/left"
 function Purchased() {

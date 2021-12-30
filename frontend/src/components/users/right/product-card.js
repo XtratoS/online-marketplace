@@ -1,5 +1,4 @@
 import React from 'react'
-//import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,10 +7,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "./product-card.css";
 import {Link} from "react-router-dom";
-import Edit from './edit-product';
 import styled from "styled-components";
 import {deleteProduct} from "../../../redux/apiCalls";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 const TopButton = styled.button`
 margin-right:5px;
 margin_left:5px; 
