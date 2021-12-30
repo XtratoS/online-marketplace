@@ -11,6 +11,7 @@ import  Announcement  from "../../Announcement";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import {addProduct} from "../../../redux/apiCalls";
+import { Redirect } from "react-router-dom";
 
 function  Add  ()
 { 
@@ -27,7 +28,13 @@ function  Add  ()
 
   const handleClick =  (e)=> {
     e.preventDefault();
+    try{
     addProduct({seller,title,desc,img,price,amount},dispatch);
+    <Redirect to = "/profile" />
+    }
+    catch(err){
+      console.log(err)
+    }
   };
   
   return(

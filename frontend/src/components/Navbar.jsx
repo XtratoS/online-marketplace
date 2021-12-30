@@ -1,10 +1,10 @@
 import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Search, ShoppingCartOutlined,AddToHomeScreenRounded } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import {useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
 import { logout } from "../redux/apiCalls";
 import { useState } from "react";
 const Container = styled.div`
@@ -45,6 +45,10 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
+  font-weight: bold;
+  ${mobile({ fontSize: "24px" })}
+`;
+const btn = styled.h1`
   font-weight: bold;
   ${mobile({ fontSize: "24px" })}
 `;
@@ -99,7 +103,9 @@ const Navbar = () => {
       </SearchContainer>
     </Left>
         <Center>
-          <Logo>ShopON.</Logo>
+            <Logo> ShopON. </Logo>
+            
+                   
         </Center>
         <Right>
         {!user ?

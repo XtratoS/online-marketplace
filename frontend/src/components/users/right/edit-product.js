@@ -13,6 +13,7 @@ import { useState } from "react";
 import {updateProduct} from "../../../redux/apiCalls";
 import Product from "./product-card";
 import {useLocation} from "react-router-dom";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 
 function Edit ()
@@ -32,8 +33,14 @@ function Edit ()
 
   const handleClick =  (e)=> {
     e.preventDefault();
-
-    updateProduct( productId ,{seller,title,desc,img,price,amount},dispatch);
+    try{
+      updateProduct( productId ,{seller,title,desc,img,price,amount},dispatch);
+      <Redirect to = "/profile" />
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
   };
   
   return(
