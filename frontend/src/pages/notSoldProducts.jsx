@@ -3,6 +3,7 @@ import Product from '../components/users/right/product-card';
 import useFetch from '../useFetch';
 import styled from "styled-components";
 import { useSelector } from 'react-redux';
+import '../components/users/right//right.css';
 const Button = styled.button`
 
 border: none;
@@ -20,8 +21,10 @@ function NotSold() {
       
     );
   return (
+  <section className='A' >
           <div className='right-heading'>
           <label className='heading-label'>In-stock products </label>
+          </div>
          
     
           <section className='products-list' >  
@@ -37,7 +40,8 @@ function NotSold() {
       {errMsg && <div className="error"> {errMsg}</div>}
           
       </section>
-       </div>
+      </section>
+       
   );
 }
 export default NotSold

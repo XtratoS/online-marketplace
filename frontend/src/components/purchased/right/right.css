@@ -1,115 +1,22 @@
-.right {
-    width: 100%;
-    padding: 10px;
-    background-color: #f5f5f5;
-    z-index: -2;
-  }
-  .right-heading {
-    padding: 8px 0px;
-    border-bottom: 2px solid lightgray;
-  }
-  .heading-label {
-    font-size: 24px;
-    font-weight: 500;
-  }
-  .right-options {
-    display: flex;
-    justify-content: space-between;
-    margin: 16px 0px;
-  }
-  .add-button {
-    /*background-color: #6264a7;*/
-   background-color: #1976d2;
-    width: fit-content;
-    color: white;
-    cursor: pointer;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 4px;
-  }
-  .add-icon {
-    margin-right: 6px;
-    font-size: 14px;
-    
-  }
-  .add-label {
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 4px;
-   
-  }
-  
-  .products-list {
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: flex-start;
-  }
-  .btn {
-    background-color: DodgerBlue;
-    border: none;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
-  }
-  /*
-  .contact-search {
-    background-color: white;
-    width: fit-content;
-    display: flex;
-    padding: 6px;
-    align-items: center;
-  }
-  .contact-search input {
-    border: none;
-    font-size: 14px;
-  }
-  .contact-search-icon {
-    color: #d0d0d0;
-  }
-  */
-  
-  .product-card {
-    margin:  6px 20px; 
-    
-   
-    
-  }
-  /*.products-list {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: scroll;
-    justify-content: flex-start;
-    
-  }*/
-  /*
-  border-radius: 8px;
- 
-   background-color: white;
-    width: 28%;
-    height: 120px;
-   
-    <div className='products-list' >
-      <div className="product-card">
-  <StyledEngineProvider injectFirst>
-    <Demo />
-  </StyledEngineProvider>
-  </div>
-  <StyledEngineProvider injectFirst>
-    <Demo />
-  </StyledEngineProvider>
-  <StyledEngineProvider injectFirst>
-    <Demo />
-  </StyledEngineProvider>
- 
 
-      </div>
-  */
+.A {
+  width: 100%;
+  padding: 10px;
+ height: 100%;
+  
+}
+.right-heading {
+  padding: 8px 0px;
+  border-bottom: 2px solid lightgray;
+}
+.heading-label {
+  font-size: 24px;
+  font-weight: 500;
+  margin-left:10px;
+}
+.right-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0px;
+}
+
