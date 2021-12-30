@@ -5,7 +5,9 @@ import * as React from 'react';
 import {Link} from "react-router-dom";
 import ImgMediaCard from './demo';
 import styled from "styled-components";
-
+import {updateCash} from "../../../redux/apiCalls"
+import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 const TopButton = styled.button`
 padding: 8px 0px;
 margin-top: 10px;
@@ -24,19 +26,36 @@ color: ${(props) => props.type === "filled" && "white"};
   background-color: #e9f5f5;
 }
 `;
+const Input = styled.input`
 
+  padding: 8px 0px;
+margin-top: 10px;
+margin-bottom: 6px;
+font-size: 15px;
+font-weight: 500;
+justify-content:center;
+width:90%;
+align-items: center;
+cursor: pointer;
+border: ${(props) => props.type === "filled" && "none"};
+background-color: ${(props) =>
+  props.type === "filled" ? "black" : "transparent"};
+color: ${(props) => props.type === "filled" && "white"};
+&:hover {
+  background-color: #e9f5f5;
+}
+`;
 function Left() {
   //const menu= ProductsMenu;
-  const user = useSelector((state) => state.user.currentUser);
-  const cash;
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.currentUser.user);
   //const { isFetching, error } = useSelector((state) => state.user);
   const [cash, setcash] = useState();
   
   const handleClick =  (e)=> {
     e.preventDefault();
     try{
-      updateProduct( productId ,{seller,title,desc,img,price,amount, allowed},dispatch);
-      edited = true;
+      updateCash( user.email ,{cash},dispatch);
     }
     catch(err)
     {
@@ -74,7 +93,7 @@ function Left() {
       <TopButton>Purchased items</TopButton>
       </Link>
 
-      <input placeholder="add the amount you want to add "   onChange={(e) => setcash(e.target.value) }/>
+      <Input type="number" placeholder="Deposite Cash NOW!"   onChange={(e) => setcash(e.target.value) }/>
       <TopButton onClick={handleClick} >Deposite cash</TopButton>
       
 

@@ -92,9 +92,12 @@ router.get('/profile', verifyToken, async(req,res) =>{
 })
 router.put('/deposite/:email', async (req, res)=>{
   const updateUser = await User.findOne({email: req.params.email}) 
+  const increasing = req.body.cash ;
+  console.log(increasing);
   try{
-    updateUser.cash = updateUser.cash + req.body.cash;
+    updateUser.cash = updateUser.cash + Number(increasing);
     updateUser.save();
+    console.log("updated cash = "+updateUser.cash );
       res.status(200).json(updateUser);
   }
   catch(e)
