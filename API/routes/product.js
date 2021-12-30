@@ -43,11 +43,14 @@ router.delete('/:id' , async(req, res) => {
     }
 });
 // get product by all users
-router.get('/find/:id', async(req, res) => {
+router.get('/:email', async(req, res) => {
     try
     {
-       const product = await Product.findById(req.params.id);
-        res.status(200).json(product);
+      const email = req.params.email;
+       const products = await Product.find({
+         seller : email 
+       });
+        res.status(200).json(products);
     }
     catch(e)
     {
@@ -55,10 +58,10 @@ router.get('/find/:id', async(req, res) => {
     }
 })
 //  get sold products 
-/*router.get("/sold", async (req, res) => {
+router.get("/sold", async (req, res) => {
   try{
     const products = await Product.find({
-      instock: 0
+      amount : 0
       });
     res.status(200).json(products);
   }
@@ -66,7 +69,21 @@ router.get('/find/:id', async(req, res) => {
     catch (err) {
     res.status(500).json(err);
   }
-});*/
+});
+
+// get not sold 
+router.get("/instock", async (req, res) => {
+  try{
+    const products = await Product.find({
+      amount: {$gt: 0} 
+      });
+    res.status(200).json(products);
+  }
+    
+    catch (err) {
+    res.status(500).json(err);
+  }
+}); 
 // get all products 
 router.get("/", async (req, res) => {
     const qNew = req.query.new;

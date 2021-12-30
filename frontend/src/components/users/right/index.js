@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 //import {profileProducts} from "../../../data/profile"
 //import { Link } from '@mui/material';
 import styled from "styled-components";
+import { useSelector } from 'react-redux';
 const Button = styled.button`
 
 border: none;
@@ -24,8 +25,9 @@ margin-right:20px;
    
     
     const Right  = () => {
+      const user = useSelector((state) => state.user.currentUser.user);
       let { data:products, isloading, errMsg} = useFetch(
-        "http://localhost:5000/api/products" //url from json-server
+        `http://localhost:5000/api/products/${user.email}` //url from json-server
         
       );
     

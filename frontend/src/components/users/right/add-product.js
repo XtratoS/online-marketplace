@@ -18,7 +18,7 @@ function  Add  ()
   //const { isFetching, error } = useSelector((state) => state.user);
   const [seller, setSeller] = useState();
   const [title, setTitle] = useState("");
-  const [img, setImageURL] = useState("");
+  const [img, setImageURL] = useState();
   const [desc, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
@@ -44,7 +44,7 @@ function  Add  ()
         <label>description :</label> 
         <input onChange={(e) => setDescription(e.target.value)} required></input> 
         <label> Image URL: </label>
-        <input type="url"  onChange={(e) => setImageURL(e.target.value)} required /> 
+        <input type="url"  onChange={(e) => setImageURL(e.target.value)}  /> 
         <label>Price: </label> 
         <input type="number"  onChange={(e) => setPrice(e.target.value)}required />
         <label>Amount: </label> 

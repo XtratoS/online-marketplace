@@ -84,15 +84,13 @@ const Navbar = () => {
     e.preventDefault();
     logout(dispatch);
   };
-  const handleSearch = (e) =>{
-
-  }
+  
       return (
 <Container>
   <Wrapper>
     <Left>
       <SearchContainer>
-        <Input placeholder="Search" onClick={handleSearch } onChange={(e) => setSearch(e.target.value)} />
+        <Input placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
         <Link Link to={`/search/${search}`}>
         <Search style={{ color: "gray", fontSize: 16 }} />
         </Link>
