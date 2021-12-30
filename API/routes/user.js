@@ -90,4 +90,16 @@ router.get('/profile', verifyToken, async(req,res) =>{
         res.status(200).json(others);
   }
 })
+router.post('/deposite', async (req, res)=>{
+  const updateUser = await User.findOne({email: req.body.email}) 
+  try{
+    updateUser.cash = updateUser.cash + req.body.cash;
+    updateUser.save();
+      res.status(200).json(updateUser);
+  }
+  catch(e)
+  {
+      res.status(500).json(e);
+  }
+})
 module.exports = router;
