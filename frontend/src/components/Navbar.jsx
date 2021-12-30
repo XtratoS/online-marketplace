@@ -84,9 +84,9 @@ const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity)
   const user = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    logout(dispatch);
+    await logout(dispatch);
   };
   
       return (
@@ -109,7 +109,10 @@ const Navbar = () => {
         </Center>
         <Right>
         {!user ?
-        (<div> 
+        (<div>
+          <Link to ={"/"}>
+          <MenuItem>Home</MenuItem> 
+          </Link> 
           <Link to={"/register"}>
             <MenuItem>REGISTER</MenuItem>
           </Link>
@@ -121,11 +124,8 @@ const Navbar = () => {
           <Link to ={"/"}>
           <MenuItem>Home</MenuItem> 
           </Link>
-          <Link to ="/profile"> <MenuItem>Profile</MenuItem> </Link>
-
-          <Link to ={"/"}>
-          <MenuItem onClick={handleClick } >SignOut</MenuItem> 
-          </Link>
+          <Link to ={"/profile"}> <MenuItem>Profile</MenuItem> </Link>
+          <Link to ={"/"}> <MenuItem onClick={handleClick}>Logout</MenuItem> </Link>
         </div>) }
         
           <Link to="/cart">

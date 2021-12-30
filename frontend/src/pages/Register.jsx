@@ -98,7 +98,7 @@ const Register = () =>
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
      
-          <Button onClick={handleClickReg} disabled={isFetching}>
+          <Button onClick={handleClickReg} >
             CREATE
             </Button>
         
