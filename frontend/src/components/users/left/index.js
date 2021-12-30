@@ -20,6 +20,9 @@ border: ${(props) => props.type === "filled" && "none"};
 background-color: ${(props) =>
   props.type === "filled" ? "black" : "transparent"};
 color: ${(props) => props.type === "filled" && "white"};
+&:hover {
+  background-color: #e9f5f5;
+}
 `;
 
 function Left() {

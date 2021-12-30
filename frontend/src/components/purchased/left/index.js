@@ -14,7 +14,7 @@ function Left() {
   return (
     <div>
     
-    <Link to="/">
+    <Link to="/profile">
     <div className="vendor" >
    < ImgMediaCard/>
 </div>

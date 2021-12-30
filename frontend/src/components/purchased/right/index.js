@@ -17,7 +17,7 @@ import { PurchaseddProducts} from "../../../data/profile"
 function Right() {
   const products= PurchaseddProducts;
   return (
-    <div className='right'>
+    <div className='A'>
       <div className='right-heading'>
       <label className='heading-label'>Purchased items</label>
       </div>

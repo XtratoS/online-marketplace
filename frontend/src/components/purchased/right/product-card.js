@@ -16,7 +16,7 @@ export default function ImgMediaCard({item}) {
         component="img"
         
         height="200"
-        image={item.imag}
+        image={item.img}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
