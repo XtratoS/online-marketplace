@@ -17,14 +17,15 @@ function  Add  ()
   const [desc, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [amount, setAmount] = useState("");
+  const [allowed, setAllow] = useState();
   const dispatch = useDispatch();
   //const { isFetching, error } = useSelector((state) => state.user);
-
+  const added = false;
   const handleClick =  (e)=> {
     e.preventDefault();
     try{
-    addProduct({seller,title,desc,img,price,amount},dispatch);
-    <Redirect to = "/profile" />
+    addProduct({seller,title,desc,img,price,amount, allowed},dispatch);
+    added = true;
     }
     catch(err){
       console.log(err)
@@ -50,13 +51,17 @@ function  Add  ()
         <input type="number"  onChange={(e) => setPrice(e.target.value)}required />
         <label>Amount: </label> 
         <input type="number" onChange={(e) => setAmount(e.target.value)}required />
+        <label>Advertise your product by allowing other user share!:  </label> 
+        <input type="boolean" onChange={(e) => setAllow(e.target.value)}required />
         <label>Please Enter Your Email to Confirm:</label> 
         <input type="text" onChange={(e) => setSeller(e.target.value)} required /> 
       
 
  
 </form>
-<button className="button" onClick={handleClick}>Add</button >
+<button className="button" onClick={handleClick}>Add
+{added? (<Redirect to = "/profile" /> ): ("")}
+</button >
 </section>
 </div>
 </div>

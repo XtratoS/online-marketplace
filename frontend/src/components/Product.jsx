@@ -1,11 +1,13 @@
 import {
   FavoriteBorderOutlined,
   SearchOutlined,
-  ShoppingCartOutlined,
+  ShoppingCartOutlined,FolderShared
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import {shareProduct} from "../../src/redux/apiCalls";
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -68,6 +70,16 @@ const Icon = styled.div`
 `;
 
 const Product = ({ item }) => {
+  const user = useSelector((state) => state.user.currentUser.user);
+  const id = item._id;
+  const dispatch = useDispatch();
+  const handleShare =async (e)=>{
+    e.preventDefault();
+    try {
+      shareProduct(id, user, dispatch)
+  }
+  catch(err) {console.log(err)}
+};
   return (
     <Container>
       <Circle />
@@ -84,6 +96,11 @@ const Product = ({ item }) => {
         <Icon>
           <FavoriteBorderOutlined />
         </Icon>
+        <Link >
+        <Icon onClick={handleShare}>
+          <FolderShared />
+        </Icon>
+        </Link>
       </Info>
     </Container>
   );

@@ -23,7 +23,7 @@ const ProductSearch = () => {
         
         const res = await axios.get(
           
-             `http://localhost:5000/api/products/${word}`
+             `http://localhost:5000/api/products/find/${word}`
         );
         setProducts(res.data);
       } catch (err) {}
