@@ -78,3 +78,14 @@ export const shareProduct = async (id,email, dispatch) => {
     dispatch(addProductFailure());
   }
 };
+
+export const updateCash = async (id, product, dispatch) => {
+  dispatch(updateProductStart());
+  try {
+    // update
+    dispatch(updateProductSuccess({ id, product }));
+    const res = await publicRequest.put(`products/${id}`, product);
+  } catch (err) {
+    dispatch(updateProductFailure());
+  }
+};

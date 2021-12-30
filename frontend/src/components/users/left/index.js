@@ -27,6 +27,22 @@ color: ${(props) => props.type === "filled" && "white"};
 
 function Left() {
   //const menu= ProductsMenu;
+  const user = useSelector((state) => state.user.currentUser);
+  const cash;
+  //const { isFetching, error } = useSelector((state) => state.user);
+  const [cash, setcash] = useState();
+  
+  const handleClick =  (e)=> {
+    e.preventDefault();
+    try{
+      updateProduct( productId ,{seller,title,desc,img,price,amount, allowed},dispatch);
+      edited = true;
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  };
   return (
     <div>
     <div className="vendor" >
@@ -58,6 +74,9 @@ function Left() {
       <TopButton>Purchased items</TopButton>
       </Link>
 
+      <input placeholder="add the amount you want to add "   onChange={(e) => setcash(e.target.value) }/>
+      <TopButton onClick={handleClick} >Deposite cash</TopButton>
+      
 
    </div>
 
