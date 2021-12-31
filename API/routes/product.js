@@ -173,7 +173,7 @@ router.get("/share/:id/:email", async (req, res) => {
       const price = productAllow.price;
       const amount = 1;
       newProduct.price =price;
-      newProduct.title =title;
+      newProduct.title =title + " original seller: " +productAllow.seller ;
       newProduct.desc =desc;
       newProduct.seller = seller;
       newProduct.img = img;
@@ -182,14 +182,14 @@ router.get("/share/:id/:email", async (req, res) => {
       updatedSeller.cash = updatedSeller.cash + price;
       updatedSeller.save();
       const updatedbuyer = await User.findOne({email : seller});
-      updatedbuyer.cash = updatedbuyer.cash - price;
+      updatedbuyer.cash =  updatedbuyer.cash - price;
       updatedbuyer.save()
       productAllow.amount = productAllow.amount - 1;
       productAllow.save() 
-      const savedProduct = await newProduct.save();
-      console.log("after" +savedProduct);
+      newProduct.save();
+      console.log("after" + newProduct);
 
-    res.status(200).json(savedProduct);
+    res.status(200).json(newProduct);
   }
     else
     res.status(403).json("your cash is not enough");
