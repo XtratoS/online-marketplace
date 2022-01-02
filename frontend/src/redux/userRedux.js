@@ -14,6 +14,7 @@ const userSlice = createSlice({
     loginSuccess: (state, action) => {
       state.isFetching = false;
       state.currentUser = action.payload;
+      document.location.href = '/';
     },
     loginFailure: (state) => {
       state.isFetching = false;
@@ -33,9 +34,15 @@ const userSlice = createSlice({
   logoutsuccess : (state) =>
   {
     state.currentUser = null;
+    //localStorage.removeItem('user');
+    document.location.href = '/login';
+  },
+  updateCashSuccess: (state, action) =>{
+    state.currentUser.user.cash = action.payload.cash;
   }
   },
 });
+  
 
-export const { loginStart, loginSuccess, loginFailure,registerStart,registerSuccess,registerFailure,logoutsuccess } = userSlice.actions;
+export const { loginStart, loginSuccess, loginFailure,registerStart,registerSuccess,registerFailure,logoutsuccess,updateCashSuccess } = userSlice.actions;
 export default userSlice.reducer;

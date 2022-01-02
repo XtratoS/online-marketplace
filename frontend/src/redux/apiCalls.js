@@ -1,4 +1,4 @@
-import { loginFailure, loginStart, loginSuccess,registerFailure,registerSuccess,registerStart,logoutsuccess } from "./userRedux";
+import { loginFailure, loginStart, loginSuccess,registerFailure,registerSuccess,registerStart,logoutsuccess,updateCashSuccess } from "./userRedux";
 import {
   getProductStart, getProductSuccess, getProductFailure, deleteProductStart, deleteProductSuccess, 
   deleteProductFailure, updateProductStart, updateProductSuccess, updateProductFailure, addProductStart, addProductSuccess, addProductFailure} from "./productRedux";
@@ -74,6 +74,7 @@ export const addProduct = async (product, dispatch) => {
 export const shareProduct = async (id,email, dispatch) => {
   try {
     const res = await publicRequest.get(`products/share/${id}/${email}`);
+    //dispatch(updatebuyerCash(res.data));
   } catch (err) {
     dispatch(addProductFailure());
   }
@@ -85,6 +86,7 @@ export const updateCash = async (email, update, dispatch) => {
     // update
     //dispatch(updateProductSuccess({ email, update }));
     const res = await publicRequest.put(`users/deposite/${email}`, update);
+   dispatch(updateCashSuccess(res.data));
   } catch (err) {
     dispatch(updateProductFailure());
   }
